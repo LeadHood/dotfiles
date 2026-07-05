@@ -1,49 +1,49 @@
 {
-	"layer": "top",
-	"position" : "bottom",
-	"reload_style_on_change": true,
-	"modules-left" : ["custom/media", "hyprland/window"], // mediaplayer? 
-	"modules-center" : ["hyprland/workspaces"],
-	"modules-right" : ["network", "pulseaudio", "battery", "clock"], // volume, brightness, cpu load and temp, ram??, storage
-	"hyprland/workspaces" : {
-		"on-click" : "activate",
-		"format": "{icon}",
-		"format-icons": {
-			"1" : "I",
-			"2" : "II",
-			"3" : "III",
-			"4" : "IV",
-			"5" : "V",
-			"6" : "VI",
-			"7" : "VII",
-			"8" : "VIII",
-			"9" : "IX",
-			"10" : "X"
-		}
-	},
-	"hyprland/window" : {
-		"max-length" : 30
-	},
-	"battery": {
-		"states": {
+    "layer": "top",
+    "position" : "bottom",
+    "reload_style_on_change": true,
+    "modules-left" : ["custom/media", "hyprland/window"], // mediaplayer? 
+    "modules-center" : ["hyprland/workspaces"],
+    "modules-right" : ["network","backlight", "pulseaudio", "battery", "clock"], // volume, brightness, cpu load and temp, ram??, storage
+    "hyprland/workspaces" : {
+	"on-click" : "activate",
+	"format": "{icon}",
+	"format-icons": {
+	    "1" : "I",
+	    "2" : "II",
+	    "3" : "III",
+	    "4" : "IV",
+	    "5" : "V",
+	    "6" : "VI",
+	    "7" : "VII",
+	    "8" : "VIII",
+	    "9" : "IX",
+	    "10" : "X"
+	}
+    },
+    "hyprland/window" : {
+	"max-length" : 30
+    },
+    "battery": {
+	"states": {
 	    "warning": 30,
 	    "critical": 15
-		},
-		"format": "{capacity}% {icon}",
-		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% 󰃨",
-		"format-plugged": "{capacity}% ",
-		"format-alt": "{time} {icon}",
-	"format-icons": ["", "", "", "", ""]
 	},
+	"format": "{capacity}% {icon}",
+	"format-full": "{capacity}% {icon}",
+	"format-charging": "{capacity}% 󰃨",
+	"format-plugged": "{capacity}% ",
+	"format-alt": "{time} {icon}",
+	"format-icons": ["", "", "", "", ""]
+    },
 
-	"network": {
-		"format-wifi": "{essid} ({signalStrength}%) ",
-		"format-disconnected": "Disconnected ⚠",
-		"format-alt": "{ifname}: {ipaddr}/{cidr}"
-		},
+    "network": {
+	"format-wifi": "{essid} ({signalStrength}%) ",
+	"format-disconnected": "Disconnected ⚠",
+	"format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
 
-		    "pulseaudio": {
+    "pulseaudio": {
 		// "scroll-step": 1, // %, can be a float
 		"format": "{format_source} {volume}% {icon} ",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
@@ -54,5 +54,9 @@
 		    "default": ["", "", ""]
 		},
 		"on-click": "pavucontrol"
-	}
+    }, 
+    "backlight": {
+		// "scroll-step": 1, // %, can be a float
+		"format": "{percent}% ☀",
+    }
 } 
